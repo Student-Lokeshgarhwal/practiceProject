@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -7,9 +8,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-const PORT = 2000;
+const PORT = process.env.PORT || 2000;
+const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/PP";
 
-mongoose.connect('mongodb://127.0.0.1:27017/PP')
+mongoose.connect(DB_URL)
 .then((res)=>console.log('DB connted !'))
 .catch((err)=>console.log('err : ',err))
 

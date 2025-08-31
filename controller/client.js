@@ -9,7 +9,7 @@ async function handlesignup(req,res){
     email:email
     })
     console.log(newClient)
-    return res.redirect('/')
+    return res.send(newClient)
 }
 
 async function handlegetallData(req,res){
