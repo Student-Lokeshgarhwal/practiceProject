@@ -1,15 +1,14 @@
 const client = require("../model/client");
 
-async function handlesignup(req,res){
-    const {name,password,email,field} = req.body;
-   const newClient = await client.create({
-    name:name,
-    password:password,
-    field:field,
-    email:email
-    })
-    console.log(newClient)
-    return res.send(newClient)
+async function handlesignup(req, res) {
+  try {
+    const { name, password, email, field } = req.body;
+    const newClient = await client.create({ name, password, field, email });
+    return res.send(newClient);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send({ error: err.message });
+  }
 }
 
 async function handlegetallData(req,res){
