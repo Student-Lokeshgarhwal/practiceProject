@@ -20,7 +20,10 @@ app.use(express.urlencoded());
 app.use(cookieParser())
 
 app.use(cors({
-   origin:'http://localhost:5173',
+   origin:[
+    'http://localhost:5173',
+    'https://snazzy-custard-e23baa.netlify.app'
+],
    credentials:true
 }));
 
