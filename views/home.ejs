@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (locals.loginClient) { %>
+      name :  <%= loginClient.name %> <br>
+      field :<%= loginClient.field %> <br>
+      email :<%= loginClient.email %> <br>
+    <% } %>
+
+    <% if (locals.foundClient) { %>
+     name :  <%= foundClient.name %> <br>
+      field :<%= foundClient.field %> <br>
+      email :<%= foundClient.email %> <br>
+    <% } %>
+   
+</body>
+</html>
