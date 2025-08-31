@@ -19,7 +19,6 @@ mongoose.connect(DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-
 .then((res)=>console.log('DB connted !'))
 .catch((err)=>console.log('err : ',err))
 
