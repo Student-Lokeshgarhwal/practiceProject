@@ -11,7 +11,14 @@ const app = express();
 const PORT = process.env.PORT || 2000;
 const DB_URL = process.env.DB_URL;
 
-mongoose.connect(DB_URL)
+if (!DB_URL) {
+  console.error('ERROR: MONGO_URI is not defined');
+  process.exit(1);
+}
+mongoose.connect(DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 
 .then((res)=>console.log('DB connted !'))
 .catch((err)=>console.log('err : ',err))
